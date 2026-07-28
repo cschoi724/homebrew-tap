@@ -1,14 +1,14 @@
 class AiAgentOps < Formula
   desc "AI agent operating harness for role-based project workflows"
   homepage "https://github.com/cschoi724/ai-agent-ops"
-  url "https://github.com/cschoi724/ai-agent-ops/archive/refs/tags/v0.6.4.tar.gz"
-  sha256 "f79ee9256c0630b222bb2198f02eb17e9002043408f776324204bcd2ba5c80bb"
+  url "https://github.com/cschoi724/ai-agent-ops/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "81be6aa6f3ec60ddd28f63b953f824b24dd70d1e818ec36cb8b2d44f139f90ea"
 
   def install
     libexec.install "VERSION"
     libexec.install "README.md", "QUICKSTART.md", "CHANGELOG.md", "LICENSE"
-    libexec.install "agents", "bin", "bootstrap", "core", "docs", "models"
-    libexec.install "policies", "runtime", "templates", "workflows"
+    libexec.install "adapters", "agents", "bin", "bootstrap", "core", "docs", "models"
+    libexec.install "policies", "runtime", "schemas", "templates", "workflows"
 
     (bin/"aiops").write <<~EOS
       #!/bin/sh
